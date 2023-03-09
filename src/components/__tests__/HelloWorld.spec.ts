@@ -16,7 +16,8 @@ describe('HelloWorld', () => {
     }}));
   });
 
-  it('renders properly', () => {
+  it('renders properly', async () => {
+    await import('../increment')
     const wrapper = mount(HelloWorld, { props: { msg: 'Hello Vitest' } });
     expect(wrapper.text()).toContain('Hello Vitest');
   });
